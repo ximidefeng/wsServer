@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: ufo-mas-wsserver
+  profiles:
+    active: @profile.name@

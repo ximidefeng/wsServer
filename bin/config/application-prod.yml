@@ -1,0 +1,26 @@
+ws:
+  path: "/mas"
+  port: 39093
+ok:
+  http:
+    connect-timeout: 30
+    read-timeout: 30
+    write-timeout: 30
+    max-idle-connections: 200 # 连接池中整体的空闲连接的最大数量
+    keep-alive-duration: 300  # 连接空闲时间最多为 300 秒
+data-sender:
+  post-url: 'https://309e91c0-d2f6-4bb5-acbd-9f9ee8def907.bspapp.com/mas/wifi/device/dataUpload' # 数据上报到serverless的HTTP请求地址
+spring:
+  #redis 配置
+  redis:
+    database: 0
+    host: 127.0.0.1
+    lettuce:
+      pool:
+        max-active: 8   #最大连接数据库连接数,设 0 为没有限制
+        max-idle: 8     #最大等待连接中的数量,设 0 为没有限制
+        max-wait: -1ms  #最大建立连接等待时间。如果超过此时间将接到异常。设为-1表示无限制。
+        min-idle: 0     #最小等待连接中的数量,设 0 为没有限制
+      shutdown-timeout: 100ms
+    password: 'Ufo#ws2021'
+    port: 6379
